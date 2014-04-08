@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5DACC09A18F4961D001F5150 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACC09918F4961D001F5150 /* Foundation.framework */; };
+		5DACC09C18F4961D001F5150 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACC09B18F4961D001F5150 /* CoreGraphics.framework */; };
+		5DACC09E18F4961D001F5150 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACC09D18F4961D001F5150 /* UIKit.framework */; };
+		5DACC0A418F4961D001F5150 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DACC0A218F4961D001F5150 /* InfoPlist.strings */; };
+		5DACC0A618F4961D001F5150 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DACC0A518F4961D001F5150 /* main.m */; };
+		5DACC0AA18F4961D001F5150 /* EMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DACC0A918F4961D001F5150 /* EMAppDelegate.m */; };
+		5DACC0AD18F4961D001F5150 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DACC0AB18F4961D001F5150 /* Main.storyboard */; };
+		5DACC0B018F4961D001F5150 /* EMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DACC0AF18F4961D001F5150 /* EMViewController.m */; };
+		5DACC0B218F4961D001F5150 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DACC0B118F4961D001F5150 /* Images.xcassets */; };
+		5DACC0B918F4961D001F5150 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACC0B818F4961D001F5150 /* XCTest.framework */; };
+		5DACC0BA18F4961D001F5150 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACC09918F4961D001F5150 /* Foundation.framework */; };
+		5DACC0BB18F4961D001F5150 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACC09D18F4961D001F5150 /* UIKit.framework */; };
+		5DACC0C318F4961D001F5150 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DACC0C118F4961D001F5150 /* InfoPlist.strings */; };
+		5DACC0C518F4961D001F5150 /* EMSimpleCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DACC0C418F4961D001F5150 /* EMSimpleCalculatorTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5DACC0BC18F4961D001F5150 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DACC08E18F4961D001F5150 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DACC09518F4961D001F5150;
+			remoteInfo = EMSimpleCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5DACC09618F4961D001F5150 /* EMSimpleCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMSimpleCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DACC09918F4961D001F5150 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5DACC09B18F4961D001F5150 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5DACC09D18F4961D001F5150 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5DACC0A118F4961D001F5150 /* EMSimpleCalculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EMSimpleCalculator-Info.plist"; sourceTree = "<group>"; };
+		5DACC0A318F4961D001F5150 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5DACC0A518F4961D001F5150 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5DACC0A718F4961D001F5150 /* EMSimpleCalculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EMSimpleCalculator-Prefix.pch"; sourceTree = "<group>"; };
+		5DACC0A818F4961D001F5150 /* EMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMAppDelegate.h; sourceTree = "<group>"; };
+		5DACC0A918F4961D001F5150 /* EMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMAppDelegate.m; sourceTree = "<group>"; };
+		5DACC0AC18F4961D001F5150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5DACC0AE18F4961D001F5150 /* EMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMViewController.h; sourceTree = "<group>"; };
+		5DACC0AF18F4961D001F5150 /* EMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMViewController.m; sourceTree = "<group>"; };
+		5DACC0B118F4961D001F5150 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5DACC0B718F4961D001F5150 /* EMSimpleCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EMSimpleCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DACC0B818F4961D001F5150 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5DACC0C018F4961D001F5150 /* EMSimpleCalculatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EMSimpleCalculatorTests-Info.plist"; sourceTree = "<group>"; };
+		5DACC0C218F4961D001F5150 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5DACC0C418F4961D001F5150 /* EMSimpleCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMSimpleCalculatorTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5DACC09318F4961D001F5150 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DACC09C18F4961D001F5150 /* CoreGraphics.framework in Frameworks */,
+				5DACC09E18F4961D001F5150 /* UIKit.framework in Frameworks */,
+				5DACC09A18F4961D001F5150 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DACC0B418F4961D001F5150 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DACC0B918F4961D001F5150 /* XCTest.framework in Frameworks */,
+				5DACC0BB18F4961D001F5150 /* UIKit.framework in Frameworks */,
+				5DACC0BA18F4961D001F5150 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5DACC08D18F4961D001F5150 = {
+			isa = PBXGroup;
+			children = (
+				5DACC09F18F4961D001F5150 /* EMSimpleCalculator */,
+				5DACC0BE18F4961D001F5150 /* EMSimpleCalculatorTests */,
+				5DACC09818F4961D001F5150 /* Frameworks */,
+				5DACC09718F4961D001F5150 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5DACC09718F4961D001F5150 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DACC09618F4961D001F5150 /* EMSimpleCalculator.app */,
+				5DACC0B718F4961D001F5150 /* EMSimpleCalculatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DACC09818F4961D001F5150 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DACC09918F4961D001F5150 /* Foundation.framework */,
+				5DACC09B18F4961D001F5150 /* CoreGraphics.framework */,
+				5DACC09D18F4961D001F5150 /* UIKit.framework */,
+				5DACC0B818F4961D001F5150 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5DACC09F18F4961D001F5150 /* EMSimpleCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				5DACC0A818F4961D001F5150 /* EMAppDelegate.h */,
+				5DACC0A918F4961D001F5150 /* EMAppDelegate.m */,
+				5DACC0AB18F4961D001F5150 /* Main.storyboard */,
+				5DACC0AE18F4961D001F5150 /* EMViewController.h */,
+				5DACC0AF18F4961D001F5150 /* EMViewController.m */,
+				5DACC0B118F4961D001F5150 /* Images.xcassets */,
+				5DACC0A018F4961D001F5150 /* Supporting Files */,
+			);
+			path = EMSimpleCalculator;
+			sourceTree = "<group>";
+		};
+		5DACC0A018F4961D001F5150 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DACC0A118F4961D001F5150 /* EMSimpleCalculator-Info.plist */,
+				5DACC0A218F4961D001F5150 /* InfoPlist.strings */,
+				5DACC0A518F4961D001F5150 /* main.m */,
+				5DACC0A718F4961D001F5150 /* EMSimpleCalculator-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5DACC0BE18F4961D001F5150 /* EMSimpleCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DACC0C418F4961D001F5150 /* EMSimpleCalculatorTests.m */,
+				5DACC0BF18F4961D001F5150 /* Supporting Files */,
+			);
+			path = EMSimpleCalculatorTests;
+			sourceTree = "<group>";
+		};
+		5DACC0BF18F4961D001F5150 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DACC0C018F4961D001F5150 /* EMSimpleCalculatorTests-Info.plist */,
+				5DACC0C118F4961D001F5150 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DACC09518F4961D001F5150 /* EMSimpleCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DACC0C818F4961D001F5150 /* Build configuration list for PBXNativeTarget "EMSimpleCalculator" */;
+			buildPhases = (
+				5DACC09218F4961D001F5150 /* Sources */,
+				5DACC09318F4961D001F5150 /* Frameworks */,
+				5DACC09418F4961D001F5150 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EMSimpleCalculator;
+			productName = EMSimpleCalculator;
+			productReference = 5DACC09618F4961D001F5150 /* EMSimpleCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5DACC0B618F4961D001F5150 /* EMSimpleCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DACC0CB18F4961D001F5150 /* Build configuration list for PBXNativeTarget "EMSimpleCalculatorTests" */;
+			buildPhases = (
+				5DACC0B318F4961D001F5150 /* Sources */,
+				5DACC0B418F4961D001F5150 /* Frameworks */,
+				5DACC0B518F4961D001F5150 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DACC0BD18F4961D001F5150 /* PBXTargetDependency */,
+			);
+			name = EMSimpleCalculatorTests;
+			productName = EMSimpleCalculatorTests;
+			productReference = 5DACC0B718F4961D001F5150 /* EMSimpleCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5DACC08E18F4961D001F5150 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = EM;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Eric McConkie";
+				TargetAttributes = {
+					5DACC0B618F4961D001F5150 = {
+						TestTargetID = 5DACC09518F4961D001F5150;
+					};
+				};
+			};
+			buildConfigurationList = 5DACC09118F4961D001F5150 /* Build configuration list for PBXProject "EMSimpleCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5DACC08D18F4961D001F5150;
+			productRefGroup = 5DACC09718F4961D001F5150 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DACC09518F4961D001F5150 /* EMSimpleCalculator */,
+				5DACC0B618F4961D001F5150 /* EMSimpleCalculatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5DACC09418F4961D001F5150 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DACC0B218F4961D001F5150 /* Images.xcassets in Resources */,
+				5DACC0A418F4961D001F5150 /* InfoPlist.strings in Resources */,
+				5DACC0AD18F4961D001F5150 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DACC0B518F4961D001F5150 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DACC0C318F4961D001F5150 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5DACC09218F4961D001F5150 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DACC0B018F4961D001F5150 /* EMViewController.m in Sources */,
+				5DACC0AA18F4961D001F5150 /* EMAppDelegate.m in Sources */,
+				5DACC0A618F4961D001F5150 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DACC0B318F4961D001F5150 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DACC0C518F4961D001F5150 /* EMSimpleCalculatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5DACC0BD18F4961D001F5150 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DACC09518F4961D001F5150 /* EMSimpleCalculator */;
+			targetProxy = 5DACC0BC18F4961D001F5150 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5DACC0A218F4961D001F5150 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DACC0A318F4961D001F5150 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5DACC0AB18F4961D001F5150 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DACC0AC18F4961D001F5150 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5DACC0C118F4961D001F5150 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DACC0C218F4961D001F5150 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5DACC0C618F4961D001F5150 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5DACC0C718F4961D001F5150 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5DACC0C918F4961D001F5150 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EMSimpleCalculator/EMSimpleCalculator-Prefix.pch";
+				INFOPLIST_FILE = "EMSimpleCalculator/EMSimpleCalculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5DACC0CA18F4961D001F5150 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EMSimpleCalculator/EMSimpleCalculator-Prefix.pch";
+				INFOPLIST_FILE = "EMSimpleCalculator/EMSimpleCalculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5DACC0CC18F4961D001F5150 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EMSimpleCalculator.app/EMSimpleCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EMSimpleCalculator/EMSimpleCalculator-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EMSimpleCalculatorTests/EMSimpleCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5DACC0CD18F4961D001F5150 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EMSimpleCalculator.app/EMSimpleCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EMSimpleCalculator/EMSimpleCalculator-Prefix.pch";
+				INFOPLIST_FILE = "EMSimpleCalculatorTests/EMSimpleCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5DACC09118F4961D001F5150 /* Build configuration list for PBXProject "EMSimpleCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DACC0C618F4961D001F5150 /* Debug */,
+				5DACC0C718F4961D001F5150 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DACC0C818F4961D001F5150 /* Build configuration list for PBXNativeTarget "EMSimpleCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DACC0C918F4961D001F5150 /* Debug */,
+				5DACC0CA18F4961D001F5150 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5DACC0CB18F4961D001F5150 /* Build configuration list for PBXNativeTarget "EMSimpleCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DACC0CC18F4961D001F5150 /* Debug */,
+				5DACC0CD18F4961D001F5150 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5DACC08E18F4961D001F5150 /* Project object */;
+}
