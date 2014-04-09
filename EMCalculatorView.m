@@ -35,19 +35,20 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        [self setup];
+        
     }
     return self;
 }
-
-
+- (void)awakeFromNib {
+    [super awakeFromNib];
+   [self setup];
+}
 
 #pragma mark -------------->>actions
 -(void)onDigitTap:(UIButton*)sender{
     
     [self addnumber:sender.tag];
 }
-
 -(void)onDecimalTap:(id)sender{
     if (self.hasDecimal)
         return;
@@ -78,15 +79,12 @@
     }
 }
 -(void)onOperatorTap:(UIButton*)sender{
-    
+    [self.currentOperatorButton setSelected:NO];
     [sender setSelected:YES];
     self.currentOperatorButton = sender;
     [self operand:sender.tag];
     self.hasDecimal = NO;
 }
-
-
-
 
 #pragma mark -------------->>functions
 
@@ -124,11 +122,10 @@
     
 }
 
-
 #pragma mark -------------->>MATH!
 -(void)operand:(int)type{
     if (type == OperandTypeEquals) {
-        [self.currentOperatorButton setSelected:NO];
+        
         [self equals];
         [self.lblOperand setText:@""];
         self.postOperatorStack = @"";
