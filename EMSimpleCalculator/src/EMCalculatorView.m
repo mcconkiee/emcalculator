@@ -45,7 +45,7 @@
 #pragma mark -------------->>actions
 -(void)onDigitTap:(UIButton*)sender{
     
-    [self addnumber:sender.tag];
+    [self addnumber:(int)sender.tag];
 }
 -(void)onDecimalTap:(id)sender{
     if (self.hasDecimal)
@@ -80,7 +80,7 @@
     [self.currentOperatorButton setSelected:NO];
     [sender setSelected:YES];
     self.currentOperatorButton = sender;
-    [self operand:sender.tag];
+    [self operand:(int)sender.tag];
     self.hasDecimal = NO;
 }
 
@@ -89,7 +89,7 @@
 -(void)togglePlusMinus{
     double cur = [[self currentString] doubleValue];
     cur = -cur;
-    if (self.currentOperand) {
+    if (self.currentOperand > -1) {
         self.postOperatorStack = [NSString stringWithFormat:@"%g",cur];
     }
         self.stack = [NSString stringWithFormat:@"%g",cur];
@@ -101,7 +101,7 @@
         return;
     
     curString = [curString substringToIndex:curString.length - 1];
-    if (self.currentOperand) {
+    if (self.currentOperand>-1) {
         self.postOperatorStack = curString;
     }else
         self.stack = curString;
@@ -111,7 +111,7 @@
 - (void)cancel:(id)sender {
     self.stack = @"";
     self.postOperatorStack = @"";
-    self.currentOperand = NULL;
+    self.currentOperand = -1;
     [self.currentOperatorButton setSelected:NO];
     self.currentOperatorButton = nil;
     self.hasDecimal = NO;
@@ -122,17 +122,18 @@
 
 #pragma mark -------------->>MATH!
 -(void)operand:(int)type{
+    [self equals];
+    NSString *displayText= self.stack;
     if (type == OperandTypeEquals) {
-        
-        [self equals];
         [self.lblOperand setText:@""];
         self.postOperatorStack = @"";
+        self.stack = @"";
+        [self.btnEquals setSelected:NO];
     }else
     {
-        [self equals];
         self.currentOperand = type;
     }
-    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[self.stack doubleValue]]];
+    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[displayText doubleValue]]];
 }
 -(void)equals{
     switch (self.currentOperand) {
@@ -162,6 +163,7 @@
 }
 -(void)addnumber:(int)number{
     [self.currentOperatorButton setSelected:NO];
+
     NSString *curString = self.stack;
     if (self.currentOperand > OperandTypeEquals) {
         curString = self.postOperatorStack;
@@ -210,6 +212,7 @@
             
         default:
             [self.lblOperand setText:@""];
+            [self.btnEquals setSelected:NO];
             break;
     }
 }
