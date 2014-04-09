@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EMSimpleCalculator/src/EMCalculatorView.m"
-            timestampString = "418769816.419058"
+            timestampString = "418772289.713214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "-equals"
             landmarkType = "5">
          </BreakpointContent>
