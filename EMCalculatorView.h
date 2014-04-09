@@ -48,5 +48,5 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIButton *btnBackspace;
 @property (weak, nonatomic) IBOutlet UIButton *btnTogglePlusMinus;
 
--(void)setup;
+
 @end
