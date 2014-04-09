@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c00d00b8-1063-427a-97bc-a9b390cc74d2" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/EMSimpleCalculator/FILE_LICENSE" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EMSimpleCalculator/EMSimpleCalculator.podspec" afterPath="$PROJECT_DIR$/EMSimpleCalculator/EMSimpleCalculator.podspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="EMSimpleCalculator_pod.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +31,7 @@
       <file leaf-file-name="EMSimpleCalculator.podspec" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EMSimpleCalculator/EMSimpleCalculator.podspec">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="23" selection-start="503" selection-end="503" vertical-scroll-proportion="0.29822487">
+            <state line="14" column="47" selection-start="531" selection-end="538" vertical-scroll-proportion="0.29822487">
               <folding />
             </state>
           </provider>
@@ -48,6 +50,13 @@
   <component name="GitLogSettings">
     <option name="myDateState">
       <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/EMSimpleCalculator/EMSimpleCalculator.podspec" />
+      </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
@@ -240,7 +249,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/EMSimpleCalculator/EMSimpleCalculator.podspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="503" selection-end="503" vertical-scroll-proportion="0.29822487">
+        <state line="14" column="47" selection-start="531" selection-end="538" vertical-scroll-proportion="0.29822487">
           <folding />
         </state>
       </provider>

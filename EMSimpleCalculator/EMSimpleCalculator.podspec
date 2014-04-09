@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     :tag => s.version.to_s
   }
   s.platform = :ios, '6.1'
-  s.license = 'MIT'
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.requires_arc = true
   s.source_files = 'EMSimpleCalculator/src/*.{h,m}'
   s.resources = "EMSimpleCalculator/src/*.{xib}"
