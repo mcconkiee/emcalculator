@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "EMSimpleCalculator"
-  s.version      = "0.0.1"
+  s.version      = "1.0.0"
   s.summary      = "A basic calculator without all the scientific mumbo jumbo"
 
   s.description  = <<-DESC
@@ -56,31 +56,10 @@ and there you go.
   #
 
   s.author             = { "Eric McConkie" => "mcconkiee@gmail.com" }
-  # s.authors          = { "Eric McConkie" => "mcconkiee@gmail.com", "other author" => "email@address.com" }
-  # s.author           = 'Eric McConkie', 'other author'
-  # s.social_media_url = "http://twitter.com/Eric McConkie"
-
-  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  If this Pod runs only on iOS or OS X, then specify the platform and
-  #  the deployment target. You can optionally include the target after the platform.
-  #
-
-  # s.platform     = :ios
-  # s.platform     = :ios, '5.0'
-
-  #  When using multiple platforms
-  # s.ios.deployment_target = '5.0'
-  # s.osx.deployment_target = '10.7'
-
-
-  # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the location from where the source should be retrieved.
-  #  Supports git, hg, bzr, svn and HTTP.
-  #
-
-  s.source       = { :git => "https://github.com/mcconkiee/emcalculator", :tag => "0.0.1" }
+  
+  s.platform     = :ios
+  
+  s.source       = { :git => "https://github.com/mcconkiee/emcalculator", :tag => "1.0.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,9 +69,9 @@ and there you go.
   #  files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
-
-  s.source_files  = 'Classes', 'Classes/**/*.{h,m}'
-  s.exclude_files = 'Classes/Exclude'
+  s.requires_arc  = true
+  s.source_files    = 'EMSimpleCalculator/src/*.{h,m}'
+  s.exclude_files   = 'Classes/Exclude'
 
   # s.public_header_files = 'Classes/**/*.h'
 
@@ -105,7 +84,7 @@ and there you go.
   #  non-essential files like tests, examples and documentation.
   #
 
-  # s.resource  = "icon.png"
+   s.resource  = "src/*.xib"
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
