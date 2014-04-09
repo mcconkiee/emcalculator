@@ -11,10 +11,8 @@
 
 @interface EMCalculatorView()
 @property(nonatomic)BOOL hasDecimal;
-
 @property(nonatomic,copy)NSString *stack; //generally the left side fo the operator
 @property(nonatomic,copy)NSString *postOperatorStack; //numbers to show after user taps +,-,/ etc (right side of operator)
-
 @property (nonatomic,weak)UIButton *currentOperatorButton;//+,-,/ etc
 @property (nonatomic)int currentOperand;
 
