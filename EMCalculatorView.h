@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    OperandTypeEquals = 10,
+    OperandTypePlus = 11,
+    OperandTypeMinus = 12,
+    OperandTypeTimes =13,
+    OperandTypeDivide = 14
+}OperandType;
+
+typedef enum {
+    FunctionTypeGeneral = 200,
+    FunctionTypeClear = 225,
+    FunctionTypeBackspace =226,
+    FunctionTypeTogglePlusMinus=227
+}FunctionType;
+
 @interface EMCalculatorView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *lblDisplay;
 @property (weak, nonatomic) IBOutlet UILabel *lblOperand;

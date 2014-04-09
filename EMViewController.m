@@ -29,14 +29,29 @@
     int delay = 1;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [calc setup];
+        
+        NSArray *subviews = [calc subviews];
+        for (UIView *w in subviews) {
+            if ([w isKindOfClass:[UIButton class]]) {
+                UIButton *btn = (UIButton*)w;
+                if (btn.tag > FunctionTypeGeneral) {
+                    [btn setBackgroundColor:[UIColor lightGrayColor]];
+                    [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+                }
+                if (btn.tag < FunctionTypeGeneral) {
+                    [btn setBackgroundColor:[UIColor blueColor]];
+                    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                }
+                if (btn.tag < OperandTypeEquals) { //these are the buttons
+                    [btn setBackgroundColor:[UIColor whiteColor]];
+                    [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+                }
+                
+            }
+        }
     });
     
-    NSArray *subviews = [calc subviews];
-    for (UIView *w in subviews) {
-        if ([w isKindOfClass:[UIButton class]]) {
-            
-        }
-    }
+    
 }
 - (void)didReceiveMemoryWarning
 {

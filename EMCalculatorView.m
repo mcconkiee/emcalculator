@@ -6,13 +6,7 @@
 //  Copyright (c) 2014 Eric McConkie. All rights reserved.
 //
 
-typedef enum {
-    OperandTypeEquals = 10,
-    OperandTypePlus = 11,
-    OperandTypeMinus = 12,
-    OperandTypeTimes =13,
-    OperandTypeDivide = 14
-}OperandType;
+
 #import "EMCalculatorView.h"
 
 @interface EMCalculatorView()
@@ -238,6 +232,7 @@ typedef enum {
     [self addObserver:self forKeyPath:@"currentOperand" options:NSKeyValueObservingOptionNew context:nil];
     [self cancel:nil];
     
+    //NUMBERS/DECIMAL
     [self.btn0 setTag:0];
     [self.btn1 setTag:1];
     [self.btn2 setTag:2];
@@ -249,7 +244,6 @@ typedef enum {
     [self.btn8 setTag:8];
     [self.btn9 setTag:9];
     
-    
     [self.btn0 addTarget:self action:@selector(onDigitTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.btn1 addTarget:self action:@selector(onDigitTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.btn2 addTarget:self action:@selector(onDigitTap:) forControlEvents:UIControlEventTouchUpInside];
@@ -260,13 +254,18 @@ typedef enum {
     [self.btn7 addTarget:self action:@selector(onDigitTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.btn8 addTarget:self action:@selector(onDigitTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.btn9 addTarget:self action:@selector(onDigitTap:) forControlEvents:UIControlEventTouchUpInside];
-    
     [self.btnDecimal addTarget:self action:@selector(onDecimalTap:) forControlEvents:UIControlEventTouchUpInside];
     
+    //FUNCTIONAL BUTTONS
     [self.btnBackspace addTarget:self action:@selector(onFunctionTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.btnClear addTarget:self action:@selector(onFunctionTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.btnTogglePlusMinus addTarget:self action:@selector(onFunctionTap:) forControlEvents:UIControlEventTouchUpInside];
+
+    [self.btnBackspace setTag:FunctionTypeBackspace];
+    [self.btnClear setTag:FunctionTypeClear];
+    [self.btnTogglePlusMinus setTag:FunctionTypeTogglePlusMinus];
     
+    //OPERATOR BUTTONS
     [self.btnEquals setTag:OperandTypeEquals];
     [self.btnPlus setTag:OperandTypePlus];
     [self.btnMinus setTag:OperandTypeMinus];
