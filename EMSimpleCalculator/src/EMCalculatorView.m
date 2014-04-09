@@ -87,13 +87,15 @@
 #pragma mark -------------->>functions
 
 -(void)togglePlusMinus{
-    double cur = [[self currentString] doubleValue];
-    cur = -cur;
-    if (self.currentOperand > -1) {
+    double cur = [[self.lblDisplay text] doubleValue];
+    cur  = cur * -1;
+    //assing to correct holder
+    if (self.postOperatorStack.length > 0) {
         self.postOperatorStack = [NSString stringWithFormat:@"%g",cur];
-    }
+    }else
         self.stack = [NSString stringWithFormat:@"%g",cur];
-    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[[self currentString] doubleValue]]];
+    
+    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",cur]];
 }
 -(void)backone{
     NSString *curString = [self currentString];
@@ -122,19 +124,31 @@
 
 #pragma mark -------------->>MATH!
 -(void)operand:(int)type{
-    [self equals];
-    NSString *displayText= self.stack;
-    if (type == OperandTypeEquals) {
-        [self.lblOperand setText:@""];
-        self.postOperatorStack = @"";
-        self.stack = @"";
-        [self.btnEquals setSelected:NO];
-    }else
-    {
-        self.currentOperand = type;
+    if (self.postOperatorStack.length>0) {
+        [self equals];
     }
-    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[displayText doubleValue]]];
+    if (type == OperandTypeEquals) {
+        [self equals];
+        [self.btnEquals setSelected:NO];
+        [self.lblOperand setText:@""];
+    }else{
+        self.currentOperand = type;
+        [self equals];
+    }
+//    [self equals];
+//    NSString *displayText= self.stack;
+//    if (type == OperandTypeEquals) {
+//        [self.lblOperand setText:@""];
+//        self.postOperatorStack = @"";
+//        self.stack = @"";
+//        [self.btnEquals setSelected:NO];
+//    }else
+//    {
+//        self.currentOperand = type;
+//    }
+//    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[displayText doubleValue]]];
 }
+
 -(void)equals{
     switch (self.currentOperand) {
         case OperandTypePlus:
@@ -145,7 +159,13 @@
             break;
             
         case OperandTypeTimes:
+        {
+            if (self.postOperatorStack.length<=0) {
+                self.postOperatorStack = @"1";
+            }
             self.stack = [NSString stringWithFormat:@"%f", [self.stack doubleValue] * [self.postOperatorStack doubleValue]];
+        }
+
             break;
             
         case OperandTypeDivide:
@@ -153,13 +173,24 @@
             if ([self.postOperatorStack isEqualToString:@"0"]) {
                 return;
             }
+            if (self.postOperatorStack.length<=0) {
+                self.postOperatorStack = @"1";
+            }
             self.stack = [NSString stringWithFormat:@"%f", [self.stack doubleValue] / [self.postOperatorStack doubleValue]];
         }
             break;
-        default:
+        default://assumes =
+        {
+            [self.lblOperand setText:@""];
+            self.postOperatorStack = @"";
+            self.stack = @"";
+            
+            
+        }
             break;
     }
     self.postOperatorStack = @"";
+    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[self.stack doubleValue]]];
 }
 -(void)addnumber:(int)number{
     [self.currentOperatorButton setSelected:NO];
