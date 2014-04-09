@@ -8,6 +8,7 @@
 
 #import "EMViewController.h"
 #import "EMCalculatorView.h"
+#import "EMStyles.h"
 @interface EMViewController ()
 
 @end
@@ -31,27 +32,45 @@
     NSMutableArray *operators = [NSMutableArray array];
     NSMutableArray *functions = [NSMutableArray array];
     for (UIView *w in subviews) {
+        if (w == calc.lblDisplay) {
+            [w setBackgroundColor:[UIColor darkGrayColor]];
+            [(UILabel*)w setTextColor:[UIColor whiteColor]];
+        }
         if ([w isKindOfClass:[UIButton class]]) {
             UIButton *btn = (UIButton*)w;
+            [btn setClipsToBounds:YES];
             if (btn.tag > FunctionTypeGeneral) {//function buttons (clear, backspace, etc)
                 [btn setBackgroundColor:[UIColor lightGrayColor]];
                 [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
                 [functions addObject:btn];
-                [btn.layer setBorderColor:[[UIColor darkGrayColor]CGColor]];
-                [btn.layer setBorderWidth:1];
+                CALayer *left = [EMStyles borderFor:BorderTypeLeft frame:btn.frame color:[UIColor darkGrayColor]];
+                [btn.layer addSublayer:left];
+                CALayer *bottom = [EMStyles borderFor:BorderTypeBottom frame:btn.frame color:[UIColor darkGrayColor]];
+                [btn.layer addSublayer:bottom];
             }
             if (btn.tag < FunctionTypeGeneral) { //operands
                 [btn setBackgroundColor:[UIColor blueColor]];
                 [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 [operators addObject:btn];
-
+                CALayer *bottom = [EMStyles borderFor:BorderTypeBottom frame:btn.frame color:[UIColor whiteColor]];
+                
+                if (btn == calc.btnEquals) {
+                    bottom = [EMStyles borderFor:BorderTypeBottom frame:btn.frame color:[UIColor darkGrayColor]];
+                }
+                [btn.layer addSublayer:bottom];
+                
             }
             if (btn.tag < OperandTypeEquals) { //these are the digit buttons
                 [btn setBackgroundColor:[UIColor whiteColor]];
                 [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
                 [digits addObject:btn];
-                [btn.layer setBorderColor:[[UIColor darkGrayColor]CGColor]];
-                [btn.layer setBorderWidth:1];
+                
+                CALayer *left = [EMStyles borderFor:BorderTypeLeft frame:btn.frame color:[UIColor darkGrayColor]];
+                [btn.layer addSublayer:left];
+                
+                CALayer *bottom = [EMStyles borderFor:BorderTypeBottom frame:btn.frame color:[UIColor darkGrayColor]];
+                [btn.layer addSublayer:bottom];
+                
             }
             
             switch (btn.tag) {
@@ -79,26 +98,7 @@
                     break;
             }
         }
-    }
-    
-    
-//    //postions
-//    CGFloat x,y;
-//    x =0.0;
-//    y = 0.0;
-//    CGFloat wd = 74.0;
-//    CGFloat ht = 45.0;
-//    for (int b=0; b<functions.count; b++) {
-//        UIButton *btn = [functions objectAtIndex:b];
-//        CGRect rect = CGRectMake(x, y, wd, ht);
-//        [btn setFrame:rect];
-//        x += wd;
-//        if (x > calc.frame.size.width - wd) {
-//            x = 0.0;
-//            y += ht;
-//        }
-//    }
-    
+    }    
     
 }
 - (void)didReceiveMemoryWarning
