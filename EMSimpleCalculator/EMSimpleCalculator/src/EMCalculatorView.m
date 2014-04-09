@@ -111,7 +111,7 @@
         return;
     
     curString = [curString substringToIndex:curString.length - 1];
-    if (self.currentOperand>-1) {
+    if (self.currentOperand > -1) {
         self.postOperatorStack = curString;
     }else
         self.stack = curString;
