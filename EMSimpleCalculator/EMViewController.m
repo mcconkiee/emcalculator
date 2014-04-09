@@ -7,7 +7,8 @@
 //
 
 #import "EMViewController.h"
-
+#import "EMCalculatorView.h"
+#import "EMStyles.h"
 @interface EMViewController ()
 
 @end
@@ -18,8 +19,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    EMCalculatorView *calc = [[[NSBundle mainBundle]loadNibNamed:@"EMCalculatorView" owner:self options:nil] objectAtIndex:0];
+    [self.view addSubview:calc];
+    [EMStyles styleCalculator:calc];
+       
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
