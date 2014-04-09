@@ -30,6 +30,13 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [calc setup];
     });
+    
+    NSArray *subviews = [calc subviews];
+    for (UIView *w in subviews) {
+        if ([w isKindOfClass:[UIButton class]]) {
+            
+        }
+    }
 }
 - (void)didReceiveMemoryWarning
 {

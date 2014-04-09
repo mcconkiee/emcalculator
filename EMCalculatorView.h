@@ -10,6 +10,7 @@
 
 @interface EMCalculatorView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *lblDisplay;
+@property (weak, nonatomic) IBOutlet UILabel *lblOperand;
 @property (weak, nonatomic) IBOutlet UIButton *btn1;
 @property (weak, nonatomic) IBOutlet UIButton *btn2;
 @property (weak, nonatomic) IBOutlet UIButton *btn3;

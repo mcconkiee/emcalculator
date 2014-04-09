@@ -7,11 +7,11 @@
 //
 
 typedef enum {
-    OperandTypeEquals,
-    OperandTypePlus,
-    OperandTypeMinus,
-    OperandTypeTimes,
-    OperandTypeDivide
+    OperandTypeEquals = 10,
+    OperandTypePlus = 11,
+    OperandTypeMinus = 12,
+    OperandTypeTimes =13,
+    OperandTypeDivide = 14
 }OperandType;
 #import "EMCalculatorView.h"
 
@@ -59,27 +59,69 @@ typedef enum {
         return;
     self.hasDecimal = YES;
 
-    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[self.stack doubleValue]]];
+    NSString *curString = nil;
+    if (self.currentOperand> OperandTypeEquals) {
+        self.postOperatorStack = [self.postOperatorStack stringByAppendingString:@"."];
+        curString = self.postOperatorStack;
+    }else{
+        self.stack = [self.stack stringByAppendingString:@"."];
+        curString = self.stack;
+    }
+    
+    
+    [self.lblDisplay setText:[NSString stringWithFormat:@"%@",curString]];
 }
 -(void)onFunctionTap:(id)sender{
     if (sender == self.btnClear) {
         [self cancel:sender];
     }
+    if (sender == self.btnBackspace) {
+        [self backone];
+    }
+    
+    if (sender == self.btnTogglePlusMinus) {
+        [self togglePlusMinus];
+    }
 }
 -(void)onOperatorTap:(UIButton*)sender{
-    if (self.stack == nil || [self.stack isEqualToString:@"0"] || self.stack.length<=0)
-        return;
     
     [sender setSelected:YES];
     self.currentOperatorButton = sender;
     [self operand:sender.tag];
+    self.hasDecimal = NO;
 }
 
 
 
+
+#pragma mark -------------->>functions
+
+-(void)togglePlusMinus{
+    double cur = [[self currentString] doubleValue];
+    cur = -cur;
+    if (self.currentOperand) {
+        self.postOperatorStack = [NSString stringWithFormat:@"%g",cur];
+    }
+        self.stack = [NSString stringWithFormat:@"%g",cur];
+    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[[self currentString] doubleValue]]];
+}
+-(void)backone{
+    NSString *curString = [self currentString];
+    if (curString.length<=0)
+        return;
+    
+    curString = [curString substringToIndex:curString.length - 1];
+    if (self.currentOperand) {
+        self.postOperatorStack = curString;
+    }else
+        self.stack = curString;
+    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[curString doubleValue]]];
+}
+
 - (void)cancel:(id)sender {
     self.stack = @"";
     self.postOperatorStack = @"";
+    self.currentOperand = NULL;
     [self.currentOperatorButton setSelected:NO];
     self.currentOperatorButton = nil;
     self.hasDecimal = NO;
@@ -89,13 +131,18 @@ typedef enum {
 }
 
 
+#pragma mark -------------->>MATH!
 -(void)operand:(int)type{
-    [self equals];
-    self.currentOperand = type;
     if (type == OperandTypeEquals) {
         [self.currentOperatorButton setSelected:NO];
+        [self equals];
+        [self.lblOperand setText:@""];
+        self.postOperatorStack = @"";
+    }else
+    {
+        [self equals];
+        self.currentOperand = type;
     }
-    
     [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[self.stack doubleValue]]];
 }
 -(void)equals{
@@ -151,9 +198,46 @@ typedef enum {
     }else
         self.stack = curString;
 }
+
+#pragma mark -------------->>KVO
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    switch (self.currentOperand) {
+        case OperandTypeDivide:
+            [self.lblOperand setText:@"/"];
+            break;
+            
+        case OperandTypePlus:
+            [self.lblOperand setText:@"+"];
+            break;
+            
+        case OperandTypeMinus:
+            [self.lblOperand setText:@"-"];
+            break;
+            
+        case OperandTypeTimes:
+            [self.lblOperand setText:@"*"];
+            break;
+            
+        default:
+            [self.lblOperand setText:@""];
+            break;
+    }
+}
+
+#pragma mark -------------->>helpers
+-(NSString*)currentString{
+    NSString *curString = self.stack;
+    if (self.currentOperand > OperandTypeEquals) {
+        curString = self.postOperatorStack;
+    }
+    return curString;
+}
 -(void)setup{
-    
+
+    [self addObserver:self forKeyPath:@"currentOperand" options:NSKeyValueObservingOptionNew context:nil];
     [self cancel:nil];
+    
     [self.btn0 setTag:0];
     [self.btn1 setTag:1];
     [self.btn2 setTag:2];
