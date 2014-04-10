@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'EMSimpleCalculator'
-  s.version = '1.0.0'
+  s.version = '1.0.1'
   s.summary = 'Super simple calc without the scientific mumbo jumbo'
   s.description = 'This calculator was written for 3 reasons- (see the README)'
   s.homepage = 'https://github.com/larsacus/LARSAdController'

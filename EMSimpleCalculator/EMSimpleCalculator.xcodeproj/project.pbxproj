@@ -59,8 +59,8 @@
 		5DACC0DB18F5C0D7001F5150 /* EMCalculatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCalculatorView.h; sourceTree = "<group>"; };
 		5DACC0DC18F5C0D7001F5150 /* EMCalculatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMCalculatorView.m; sourceTree = "<group>"; };
 		5DACC0DD18F5C0D7001F5150 /* EMCalculatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EMCalculatorView.xib; sourceTree = "<group>"; };
-		5DACC0E018F5C0E1001F5150 /* EMStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMStyles.h; sourceTree = "<group>"; };
-		5DACC0E118F5C0E1001F5150 /* EMStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMStyles.m; sourceTree = "<group>"; };
+		5DACC0E018F5C0E1001F5150 /* EMStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EMStyles.h; path = ../EMStyles.h; sourceTree = "<group>"; };
+		5DACC0E118F5C0E1001F5150 /* EMStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EMStyles.m; path = ../EMStyles.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +126,6 @@
 				5DACC0AB18F4961D001F5150 /* Main.storyboard */,
 				5DACC0AE18F4961D001F5150 /* EMViewController.h */,
 				5DACC0AF18F4961D001F5150 /* EMViewController.m */,
-				5DACC0E018F5C0E1001F5150 /* EMStyles.h */,
-				5DACC0E118F5C0E1001F5150 /* EMStyles.m */,
 				5DACC0B118F4961D001F5150 /* Images.xcassets */,
 				5DACC0A018F4961D001F5150 /* Supporting Files */,
 			);
@@ -166,6 +164,8 @@
 		5DACC0DA18F5C0D7001F5150 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				5DACC0E018F5C0E1001F5150 /* EMStyles.h */,
+				5DACC0E118F5C0E1001F5150 /* EMStyles.m */,
 				5DACC0DB18F5C0D7001F5150 /* EMCalculatorView.h */,
 				5DACC0DC18F5C0D7001F5150 /* EMCalculatorView.m */,
 				5DACC0DD18F5C0D7001F5150 /* EMCalculatorView.xib */,
