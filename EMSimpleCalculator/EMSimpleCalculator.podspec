@@ -16,4 +16,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source_files = 'EMSimpleCalculator/src/*.{h,m}'
   s.resources = "EMSimpleCalculator/src/*.{xib}"
+  s.frameworks = 'CoreGraphics'
 end

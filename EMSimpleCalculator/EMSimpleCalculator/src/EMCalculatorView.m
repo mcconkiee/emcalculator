@@ -16,7 +16,7 @@
 @property(nonatomic,copy)NSString *postOperatorStack; //numbers to show after user taps +,-,/ etc (right side of operator)
 @property (nonatomic,weak)UIButton *currentOperatorButton;//+,-,/ etc
 @property (nonatomic)int currentOperand;
-
+@property (nonatomic,strong)NSNumberFormatter *formatter;
 @end
 
 @implementation EMCalculatorView
@@ -47,6 +47,11 @@
         [self cancel:nil];
     }
 }
+-(void)updateDisplay:(NSString*)floatLikeNumber{
+    
+    NSString *numberString = [self.formatter stringFromNumber: [NSNumber numberWithDouble:[floatLikeNumber doubleValue]]];
+    [self.lblDisplay setText:numberString];
+}
 #pragma mark -------------->>actions
 -(void)onDigitTap:(UIButton*)sender{
     [self handleNewDigit];
@@ -66,8 +71,8 @@
         curString = self.stack;
     }
     
-    
-    [self.lblDisplay setText:[NSString stringWithFormat:@"%@",curString]];
+    [self updateDisplay:curString];
+
 }
 -(void)onFunctionTap:(id)sender{
     if (sender == self.btnClear) {
@@ -95,15 +100,17 @@
 #pragma mark -------------->>functions
 
 -(void)togglePlusMinus{
-    double cur = [[self.lblDisplay text] doubleValue];
+    
+    double cur = [[self.formatter numberFromString:self.lblDisplay.text] doubleValue];
     cur  = cur * -1;
+    NSString *curString = [NSString stringWithFormat:@"%g",cur];
     //assing to correct holder
     if (self.postOperatorStack.length > 0) {
-        self.postOperatorStack = [NSString stringWithFormat:@"%g",cur];
+        self.postOperatorStack = curString;
     }else
-        self.stack = [NSString stringWithFormat:@"%g",cur];
-    
-    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",cur]];
+        self.stack = curString;
+
+    [self updateDisplay:[NSString stringWithFormat:@"%g",cur]];
 }
 -(void)backone{
     NSString *curString = [self currentString];
@@ -115,7 +122,8 @@
         self.postOperatorStack = curString;
     }else
         self.stack = curString;
-    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[curString doubleValue]]];
+    
+    [self updateDisplay:curString];
 }
 
 - (void)cancel:(id)sender {
@@ -126,8 +134,8 @@
     self.currentOperatorButton = nil;
     self.hasDecimal = NO;
     self.canStartFreshCalculation = NO;
-    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[self.stack doubleValue]]];
-    
+
+    [self updateDisplay:self.stack];
     
 }
 
@@ -188,7 +196,7 @@
             break;
     }
     self.postOperatorStack = @"";
-    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[self.stack doubleValue]]];
+    [self updateDisplay:self.stack];
 }
 -(void)addnumber:(int)number{
     [self.currentOperatorButton setSelected:NO];
@@ -212,7 +220,7 @@
         curString = @"";
     }
     
-    [self.lblDisplay setText:[NSString stringWithFormat:@"%g",[curString doubleValue]]];
+    [self updateDisplay:curString];
     if (self.currentOperand > OperandTypeEquals) {
         self.postOperatorStack = curString;
     }else
@@ -255,7 +263,10 @@
     return curString;
 }
 -(void)setup{
-
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [self setFormatter:formatter];
+    
     [self addObserver:self forKeyPath:@"currentOperand" options:NSKeyValueObservingOptionNew context:nil];
     [self cancel:nil];
     
