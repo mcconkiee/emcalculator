@@ -48,8 +48,16 @@
     }
 }
 -(void)updateDisplay:(NSString*)floatLikeNumber{
-    
+    if ([floatLikeNumber hasSuffix:@"."]) {
+
+        floatLikeNumber = [floatLikeNumber stringByAppendingString:@"0"];
+        [self.formatter setMinimumFractionDigits:1];
+        
+    }
     NSString *numberString = [self.formatter stringFromNumber: [NSNumber numberWithDouble:[floatLikeNumber doubleValue]]];
+    if ([numberString hasSuffix:@".0"]) {
+        numberString = [numberString stringByReplacingOccurrencesOfString:@".0" withString:@"."];
+    }
     [self.lblDisplay setText:numberString];
 }
 #pragma mark -------------->>actions
@@ -63,6 +71,7 @@
     self.hasDecimal = YES;
     [self handleNewDigit];
     NSString *curString = nil;
+
     if (self.currentOperand> OperandTypeEquals) {
         self.postOperatorStack = [self.postOperatorStack stringByAppendingString:@"."];
         curString = self.postOperatorStack;
@@ -87,6 +96,7 @@
     }
 }
 -(void)onOperatorTap:(UIButton*)sender{
+    [self.formatter setMinimumFractionDigits:0];
     if (self.canStartFreshCalculation) {//the user last pressed = which implies we may or may not start a new calculation. However since they hit the operator, and not a digit, we are going to conitinue the calculation with what is in the display
         [self setCanStartFreshCalculation:NO];
     }
@@ -116,8 +126,11 @@
     NSString *curString = [self currentString];
     if (curString.length<=0)
         return;
-    
+    if ([curString hasSuffix:@"."]) {
+        [self setHasDecimal:NO];
+    }
     curString = [curString substringToIndex:curString.length - 1];
+    
     if (self.currentOperand > -1) {
         self.postOperatorStack = curString;
     }else
