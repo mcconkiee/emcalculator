@@ -40,7 +40,7 @@
 }
 - (void)awakeFromNib {
     [super awakeFromNib];
-   [self setup];
+    [self setup];
 }
 -(void)handleNewDigit{
     if (self.canStartFreshCalculation) {//the user preformed a calculation using the equal sign....pressing a digit assumes a fresh new calculation
@@ -49,12 +49,13 @@
 }
 -(void)updateDisplay:(NSString*)floatLikeNumber{
     if ([floatLikeNumber hasSuffix:@"."]) {
-
+        
         floatLikeNumber = [floatLikeNumber stringByAppendingString:@"0"];
         [self.formatter setMinimumFractionDigits:1];
         
     }
-    NSString *numberString = [self.formatter stringFromNumber: [NSNumber numberWithDouble:[floatLikeNumber doubleValue]]];
+    
+    NSString *numberString = [self.formatter stringFromNumber: [NSDecimalNumber numberWithDouble:[floatLikeNumber doubleValue]]];
     if ([numberString hasSuffix:@".0"]) {
         numberString = [numberString stringByReplacingOccurrencesOfString:@".0" withString:@"."];
     }
@@ -62,16 +63,18 @@
 }
 #pragma mark -------------->>actions
 -(void)onDigitTap:(UIButton*)sender{
+    [self.lblWarning setText:@""];
     [self handleNewDigit];
     [self addnumber:(int)sender.tag];
 }
 -(void)onDecimalTap:(id)sender{
+    [self.lblWarning setText:@""];
     if (self.hasDecimal)
         return;
     self.hasDecimal = YES;
     [self handleNewDigit];
     NSString *curString = nil;
-
+    
     if (self.currentOperand> OperandTypeEquals) {
         self.postOperatorStack = [self.postOperatorStack stringByAppendingString:@"."];
         curString = self.postOperatorStack;
@@ -81,9 +84,10 @@
     }
     
     [self updateDisplay:curString];
-
+    
 }
 -(void)onFunctionTap:(id)sender{
+    [self.lblWarning setText:@""];
     if (sender == self.btnClear) {
         [self cancel:sender];
     }
@@ -96,6 +100,7 @@
     }
 }
 -(void)onOperatorTap:(UIButton*)sender{
+    [self.lblWarning setText:@""];
     [self.formatter setMinimumFractionDigits:0];
     if (self.canStartFreshCalculation) {//the user last pressed = which implies we may or may not start a new calculation. However since they hit the operator, and not a digit, we are going to conitinue the calculation with what is in the display
         [self setCanStartFreshCalculation:NO];
@@ -119,7 +124,7 @@
         self.postOperatorStack = curString;
     }else
         self.stack = curString;
-
+    
     [self updateDisplay:[NSString stringWithFormat:@"%g",cur]];
 }
 -(void)backone{
@@ -147,13 +152,14 @@
     self.currentOperatorButton = nil;
     self.hasDecimal = NO;
     self.canStartFreshCalculation = NO;
-
+    
     [self updateDisplay:self.stack];
     
 }
 
 #pragma mark -------------->>MATH!
 -(void)operand:(int)type{
+    //push whatever is on the right to the stack
     if (self.postOperatorStack.length>0) {
         [self equals];
     }
@@ -169,6 +175,14 @@
 }
 
 -(void)equals{
+    //prevent division by zero with message
+    if (self.currentOperand == OperandTypeDivide) {
+        if ([self.postOperatorStack isEqualToString:@"0"]) {
+            [self updateDisplay:self.stack];
+            [self.lblWarning setText:@"can not divide by zero"];
+            return;
+        }
+    }
     switch (self.currentOperand) {
         case OperandTypePlus:
             self.stack = [NSString stringWithFormat:@"%f", [self.stack doubleValue] + [self.postOperatorStack doubleValue]];
@@ -184,18 +198,17 @@
             }
             self.stack = [NSString stringWithFormat:@"%f", [self.stack doubleValue] * [self.postOperatorStack doubleValue]];
         }
-
+            
             break;
             
         case OperandTypeDivide:
         {
-            if ([self.postOperatorStack isEqualToString:@"0"]) {
-                return;
-            }
+            
             if (self.postOperatorStack.length<=0) {
                 self.postOperatorStack = @"1";
             }
-            self.stack = [NSString stringWithFormat:@"%f", [self.stack doubleValue] / [self.postOperatorStack doubleValue]];
+            NSDecimalNumber *dval = (NSDecimalNumber*)[NSDecimalNumber numberWithDouble:([self.stack doubleValue] / [self.postOperatorStack doubleValue])];
+            self.stack = [NSString stringWithFormat:@"%f", [dval floatValue]];
         }
             break;
         default://assumes =
@@ -213,7 +226,7 @@
 }
 -(void)addnumber:(int)number{
     [self.currentOperatorButton setSelected:NO];
-
+    
     NSString *curString = self.stack;
     if (self.currentOperand > OperandTypeEquals) {
         curString = self.postOperatorStack;
@@ -279,7 +292,8 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [self setFormatter:formatter];
-    
+    [self.formatter setMaximumFractionDigits:10];
+    [self.lblWarning setText:@""];
     [self addObserver:self forKeyPath:@"currentOperand" options:NSKeyValueObservingOptionNew context:nil];
     [self cancel:nil];
     
@@ -311,7 +325,7 @@
     [self.btnBackspace addTarget:self action:@selector(onFunctionTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.btnClear addTarget:self action:@selector(onFunctionTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.btnTogglePlusMinus addTarget:self action:@selector(onFunctionTap:) forControlEvents:UIControlEventTouchUpInside];
-
+    
     [self.btnBackspace setTag:FunctionTypeBackspace];
     [self.btnClear setTag:FunctionTypeClear];
     [self.btnTogglePlusMinus setTag:FunctionTypeTogglePlusMinus];

@@ -1,120 +1,127 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EMCalculatorView">
+        <view contentMode="scaleToFill" id="vqG-HQ-pA7" customClass="EMCalculatorView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gqC-Ga-1MF">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0MW-cY-iFp">
                     <rect key="frame" x="12" y="15" width="296" height="49"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NPc-bF-xTn">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TTu-hW-gbR">
                     <rect key="frame" x="12" y="15" width="26" height="49"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Lba-GP-gAe">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SIo-Ga-cr9">
+                    <rect key="frame" x="12" y="43" width="296" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.88519021740000003" green="0.88519021740000003" blue="0.88519021740000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eU4-UL-PWB">
                     <rect key="frame" x="12" y="199" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="1"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PlV-Me-YhT">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gZi-iM-LaP">
                     <rect key="frame" x="86" y="199" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="2"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N0h-kH-mXl">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FtD-AR-oRj">
                     <rect key="frame" x="160" y="199" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="3"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iQf-7g-DtI">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="M2E-05-Qx6">
                     <rect key="frame" x="234" y="199" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="+"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1yU-Td-Y2p">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="J6b-18-jaa">
                     <rect key="frame" x="12" y="244" width="148" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="0"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="58j-TD-g2j">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wBN-KB-7KE">
                     <rect key="frame" x="160" y="244" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="."/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="29f-2G-cUB">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="z54-RW-61E">
                     <rect key="frame" x="234" y="244" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="="/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UVC-YA-2Yw">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oIA-4y-A4g">
                     <rect key="frame" x="12" y="154" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="4"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wFs-6S-VRQ">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yrz-Sa-PFk">
                     <rect key="frame" x="86" y="154" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="5"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xVT-B7-GpZ">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DXN-Je-VMX">
                     <rect key="frame" x="160" y="154" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="6"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9xj-RN-TWd">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vKb-PV-7Ha">
                     <rect key="frame" x="234" y="154" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="-"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="r8w-ml-exw">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mGF-Kp-NB2">
                     <rect key="frame" x="12" y="109" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="7"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eC7-am-Tyf">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4jO-wU-K2C">
                     <rect key="frame" x="86" y="109" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="8"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jpx-9N-TPP">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vXD-rU-bLu">
                     <rect key="frame" x="160" y="109" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="9"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iec-LI-hqU">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="d29-rI-BKi">
                     <rect key="frame" x="234" y="109" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="x"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="meH-DB-5If">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jbB-GP-DdA">
                     <rect key="frame" x="12" y="64" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="C"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6R3-aU-3PA">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nLQ-2Z-kqp">
                     <rect key="frame" x="86" y="64" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="D"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wcD-Am-62q">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="v1v-GD-vKb">
                     <rect key="frame" x="160" y="64" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="+/-"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8wl-j9-jrG">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kHM-76-s19">
                     <rect key="frame" x="234" y="64" width="74" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="/"/>
@@ -123,27 +130,28 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="btn0" destination="1yU-Td-Y2p" id="urz-f0-hQp"/>
-                <outlet property="btn1" destination="Lba-GP-gAe" id="kwZ-aI-TKZ"/>
-                <outlet property="btn2" destination="PlV-Me-YhT" id="svi-m0-3OJ"/>
-                <outlet property="btn3" destination="N0h-kH-mXl" id="02u-gl-XAl"/>
-                <outlet property="btn4" destination="UVC-YA-2Yw" id="JVl-iE-3Hx"/>
-                <outlet property="btn5" destination="wFs-6S-VRQ" id="hDu-dX-ywr"/>
-                <outlet property="btn6" destination="xVT-B7-GpZ" id="VBO-js-OWl"/>
-                <outlet property="btn7" destination="r8w-ml-exw" id="H6L-Fr-x1u"/>
-                <outlet property="btn8" destination="eC7-am-Tyf" id="8pd-op-G5o"/>
-                <outlet property="btn9" destination="jpx-9N-TPP" id="FVi-sU-nU4"/>
-                <outlet property="btnBackspace" destination="6R3-aU-3PA" id="vnW-A2-gDY"/>
-                <outlet property="btnClear" destination="meH-DB-5If" id="rJc-RC-4xy"/>
-                <outlet property="btnDecimal" destination="58j-TD-g2j" id="TQj-Vn-IPE"/>
-                <outlet property="btnDivide" destination="8wl-j9-jrG" id="v6P-wh-n1F"/>
-                <outlet property="btnEquals" destination="29f-2G-cUB" id="EX8-dj-1GX"/>
-                <outlet property="btnMinus" destination="9xj-RN-TWd" id="M2X-bK-GCE"/>
-                <outlet property="btnPlus" destination="iQf-7g-DtI" id="FQ9-ON-pWQ"/>
-                <outlet property="btnTimes" destination="iec-LI-hqU" id="2ve-rQ-e62"/>
-                <outlet property="btnTogglePlusMinus" destination="wcD-Am-62q" id="S4B-kj-XBc"/>
-                <outlet property="lblDisplay" destination="gqC-Ga-1MF" id="R1p-7g-8MQ"/>
-                <outlet property="lblOperand" destination="NPc-bF-xTn" id="HSL-e4-ZXh"/>
+                <outlet property="btn0" destination="J6b-18-jaa" id="EkF-eb-hFI"/>
+                <outlet property="btn1" destination="eU4-UL-PWB" id="HTW-Nn-jdg"/>
+                <outlet property="btn2" destination="gZi-iM-LaP" id="75L-vc-Ba1"/>
+                <outlet property="btn3" destination="FtD-AR-oRj" id="ZRt-33-pCX"/>
+                <outlet property="btn4" destination="oIA-4y-A4g" id="E3O-xp-fvW"/>
+                <outlet property="btn5" destination="yrz-Sa-PFk" id="Lf6-uQ-OV6"/>
+                <outlet property="btn6" destination="DXN-Je-VMX" id="pOv-8f-9xr"/>
+                <outlet property="btn7" destination="mGF-Kp-NB2" id="Wk5-ce-2qn"/>
+                <outlet property="btn8" destination="4jO-wU-K2C" id="6Ka-ZT-AgL"/>
+                <outlet property="btn9" destination="vXD-rU-bLu" id="BeT-B1-zcv"/>
+                <outlet property="btnBackspace" destination="nLQ-2Z-kqp" id="M8K-KM-3Kx"/>
+                <outlet property="btnClear" destination="jbB-GP-DdA" id="DAp-tO-yny"/>
+                <outlet property="btnDecimal" destination="wBN-KB-7KE" id="qPu-Pr-RFb"/>
+                <outlet property="btnDivide" destination="kHM-76-s19" id="Zz6-8c-5Ah"/>
+                <outlet property="btnEquals" destination="z54-RW-61E" id="Sm3-gR-rkG"/>
+                <outlet property="btnMinus" destination="vKb-PV-7Ha" id="mdz-TD-EXs"/>
+                <outlet property="btnPlus" destination="M2E-05-Qx6" id="REV-aW-XSQ"/>
+                <outlet property="btnTimes" destination="d29-rI-BKi" id="yCI-uW-lm6"/>
+                <outlet property="btnTogglePlusMinus" destination="v1v-GD-vKb" id="vVB-Bv-ifU"/>
+                <outlet property="lblDisplay" destination="0MW-cY-iFp" id="Jpo-Oh-R4w"/>
+                <outlet property="lblOperand" destination="TTu-hW-gbR" id="KSW-lv-ubt"/>
+                <outlet property="lblWarning" destination="SIo-Ga-cr9" id="oN6-s0-Lr1"/>
             </connections>
         </view>
     </objects>

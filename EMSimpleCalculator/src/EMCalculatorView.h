@@ -24,6 +24,7 @@ typedef enum {
 }FunctionType;
 
 @interface EMCalculatorView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *lblWarning;
 @property (weak, nonatomic) IBOutlet UILabel *lblDisplay;
 @property (weak, nonatomic) IBOutlet UILabel *lblOperand;
 @property (weak, nonatomic) IBOutlet UIButton *btn1;
