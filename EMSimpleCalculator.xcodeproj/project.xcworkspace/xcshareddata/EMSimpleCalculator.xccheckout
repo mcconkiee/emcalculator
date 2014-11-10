@@ -10,43 +10,31 @@
 	<string>EMSimpleCalculator</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>9EF9DDE3-9271-49C3-964C-239EC3E889CD</key>
-		<string>https://github.com/mcconkiee/emcalculator.git</string>
-		<key>A4B93BEB-7B6E-401C-912C-AA4E0AED7A9D</key>
+		<key>15630C410D2E8FF2148E03EBF59F19879DC06510</key>
 		<string>https://github.com/mcconkiee/emcalculator.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>EMSimpleCalculator.xcodeproj/project.xcworkspace</string>
+	<string>EMSimpleCalculator.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>9EF9DDE3-9271-49C3-964C-239EC3E889CD</key>
+		<key>15630C410D2E8FF2148E03EBF59F19879DC06510</key>
 		<string>../..</string>
-		<key>A4B93BEB-7B6E-401C-912C-AA4E0AED7A9D</key>
-		<string>../../EMSimpleCalculator</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://bitbucket.org/mcconkiee/roger-cpa-review.git</string>
+	<string>https://github.com/mcconkiee/emcalculator.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>9EF9DDE3-9271-49C3-964C-239EC3E889CD</string>
+	<string>15630C410D2E8FF2148E03EBF59F19879DC06510</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>A4B93BEB-7B6E-401C-912C-AA4E0AED7A9D</string>
+			<string>15630C410D2E8FF2148E03EBF59F19879DC06510</string>
 			<key>IDESourceControlWCCName</key>
-			<string>EMSimpleCalculator</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>9EF9DDE3-9271-49C3-964C-239EC3E889CD</string>
-			<key>IDESourceControlWCCName</key>
-			<string>EMSimpleCalculator_pod</string>
+			<string>emcalculator</string>
 		</dict>
 	</array>
 </dict>

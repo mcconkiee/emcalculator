@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D3F18EA1A11845D00DEFC4A /* EMInputLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3F18E91A11845D00DEFC4A /* EMInputLabel.m */; };
 		5D5BAD9218F7612000CA0072 /* EMStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BAD9118F7612000CA0072 /* EMStyles.m */; };
 		5DACC09A18F4961D001F5150 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACC09918F4961D001F5150 /* Foundation.framework */; };
 		5DACC09C18F4961D001F5150 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACC09B18F4961D001F5150 /* CoreGraphics.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D3F18E81A11845D00DEFC4A /* EMInputLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMInputLabel.h; sourceTree = "<group>"; };
+		5D3F18E91A11845D00DEFC4A /* EMInputLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMInputLabel.m; sourceTree = "<group>"; };
 		5D5BAD9018F7612000CA0072 /* EMStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMStyles.h; sourceTree = "<group>"; };
 		5D5BAD9118F7612000CA0072 /* EMStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMStyles.m; sourceTree = "<group>"; };
 		5DACC09618F4961D001F5150 /* EMSimpleCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMSimpleCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +172,8 @@
 				5D5BAD9118F7612000CA0072 /* EMStyles.m */,
 				5DACC0DC18F5C0D7001F5150 /* EMCalculatorView.m */,
 				5DACC0DD18F5C0D7001F5150 /* EMCalculatorView.xib */,
+				5D3F18E81A11845D00DEFC4A /* EMInputLabel.h */,
+				5D3F18E91A11845D00DEFC4A /* EMInputLabel.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 				5DACC0B018F4961D001F5150 /* EMViewController.m in Sources */,
 				5DACC0AA18F4961D001F5150 /* EMAppDelegate.m in Sources */,
 				5DACC0A618F4961D001F5150 /* main.m in Sources */,
+				5D3F18EA1A11845D00DEFC4A /* EMInputLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

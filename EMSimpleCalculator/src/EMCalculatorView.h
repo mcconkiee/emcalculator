@@ -23,6 +23,7 @@ typedef enum {
     FunctionTypeTogglePlusMinus=227
 }FunctionType;
 
+@class EMInputLabel;
 @interface EMCalculatorView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *lblWarning;
 @property (weak, nonatomic) IBOutlet UILabel *lblDisplay;
