@@ -343,5 +343,8 @@
     [self.btnTimes addTarget:self action:@selector(onOperatorTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.btnEquals addTarget:self action:@selector(onOperatorTap:) forControlEvents:UIControlEventTouchUpInside];
 }
-
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"currentOperand" context:nil];
+}
 @end
